@@ -1,0 +1,157 @@
+</!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>TTCSM Skill Tree - Connie</title>
+	<script type="text/javascript" src="settings.js?v=1"></script>
+	<script type="text/javascript" src="perkdata.js?v=1"></script>
+	<script type="text/javascript" src="pathlogic.js?v=1"></script>
+	<script type="text/javascript" src="trees.js?v=17"></script>
+	<script type="text/javascript" src="script.js?v=57"></script>
+	<script src="showPerkIcons.js"></script>
+	<link rel="shortcut icon" href="favicon.ico?v=1" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css?v=50"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="title" content="Find the perks you need for the perfect build on your favorite character's Skill Tree.">
+	<meta name="description" content="Skill trees for all current ttcsm victims and family members.">
+	<meta name="keywords" content="ttcsm,the texas chainsaw massacre,skill tree,perk tree,perks,abilities,star sign,game,leatherface,bubba,the cook,hitchhiker,johnny,sissy,nancy,hands,bones,connie,leland,ana,sonny,julie,danny,virginia,maria,wyatt">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body tabindex="0">
+	<h2 id="character-name">Connie</h2>
+	<div id="share-string">
+		<input id="share-input" type="text" name="">
+	</div>
+	<select id="character-select">
+		<optgroup label="Victims">
+			<option value="connie">Connie</option>
+			<option value="leland">Leland</option>
+			<option value="ana">Ana</option>
+			<option value="sonny">Sonny</option>
+			<option value="julie">Julie</option>
+			<option value="danny">Danny</option>
+			<option value="virginia">Virginia</option>
+			<option value="maria">Maria</option>
+			<option value="wyatt">Wyatt</option>
+		</optgroup>
+		<optgroup label="Family">
+			<option value="leatherface">Leatherface</option>
+			<option value="cook">Cook</option>
+			<option value="hitchhiker">Hitchhiker</option>
+			<option value="sissy">Sissy</option>
+			<option value="johnny">Johnny</option>
+			<option value="nancy">Nancy</option>
+			<option value="hands">Hands</option>
+			<option value="bones">Bones</option>
+		</optgroup>
+	</select>
+	<img id="character-portrait" src="char/connie.webp" alt="Character portrait for Connie.">
+	<div id="perk-slots">
+		<div id="slot-1" class="perk-slot"><div class="slot-holder"></div></div>
+		<div id="slot-2" class="perk-slot"><div class="slot-holder"></div></div>
+		<div id="slot-3" class="perk-slot"><div class="slot-holder"></div></div>
+	</div>
+	<div id="app-controls">
+		<div id="undo-choice" class="btn-combo"><button title="Undo">E</button><span>undo</span></div>
+		<div id="reset-tree" class="btn-combo"><button title="Reset Skill Tree">R</button><span>reset</span></div>
+		<div id="edit-loadout" class="btn-combo"><button title="Loadout">F</button><span>loadout</span></div>
+		<div id="share-build" class="btn-combo"><button title="Share">V</button><span>share</span></div>
+	</div>
+	<div id="map-controls">
+		<img src="middlemouse.webp">
+		<img src="c_key.webp">
+		<img src="movekeys.webp">
+	</div>
+	<div id="character-loadout">
+		<div id="attribute-points">
+			<div class="icon victim" data-id="1" style="background-position: 100% 100%;"></div>
+			<div id="remaining-points">0</div>
+		</div>
+		<div id="character-attributes" class="victim">
+			<div class="attribute savagery">
+				<div class="left-side">
+					<div class="top-half"><div class="value"></div><h3>Savagery</h3></div>
+					<div class="bar"><div class="base"></div><div class="spent"></div><div class="mask"></div></div>
+				</div>
+				<button class="adjust subtract"><</button><button class="adjust add">></button>
+			</div>
+			<div class="attribute blood-harvest">
+				<div class="left-side">
+					<div class="top-half"><div class="value"></div><h3>Harvesting</h3></div>
+					<div class="bar"><div class="base"></div><div class="spent"></div><div class="mask"></div></div>
+				</div>
+				<button class="adjust subtract"><</button><button class="adjust add">></button>
+			</div>
+			<div class="attribute toughness">
+				<div class="left-side">
+					<div class="top-half"><div class="value"></div><h3>Toughness</h3></div>
+					<div class="bar"><div class="base"></div><div class="spent"></div><div class="mask"></div></div>
+				</div>
+				<button class="adjust subtract"><</button><button class="adjust add">></button>
+			</div>
+			<div class="attribute endurance">
+				<div class="left-side">
+					<div class="top-half"><div class="value"></div><h3>Endurance</h3></div>
+					<div class="bar"><div class="base"></div><div class="spent"></div><div class="mask"></div></div>
+				</div>
+				<button class="adjust subtract"><</button><button class="adjust add">></button>
+			</div>
+			<div class="attribute strength">
+				<div class="left-side">
+					<div class="top-half"><div class="value"></div><h3>Strength</h3></div>
+					<div class="bar"><div class="base"></div><div class="spent"></div><div class="mask"></div></div>
+				</div>
+				<button class="adjust subtract"><</button><button class="adjust add">></button>
+			</div>
+			<div class="attribute proficiency">
+				<div class="left-side">
+					<div class="top-half"><div class="value"></div><h3>Proficiency</h3></div>
+					<div class="bar"><div class="base"></div><div class="spent"></div><div class="mask"></div></div>
+				</div>
+				<button class="adjust subtract"><</button><button class="adjust add">></button>
+			</div>
+			<div class="attribute stealth">
+				<div class="left-side">
+					<div class="top-half"><div class="value"></div><h3>Stealth</h3></div>
+					<div class="bar"><div class="base"></div><div class="spent"></div><div class="mask"></div></div>
+				</div>
+				<button class="adjust subtract"><</button><button class="adjust add">></button>
+			</div>
+		</div>
+		<div id="attribute-info">
+			<div class="key-shortcut"><span class="key-combo">Shift +</span><span>1 to 5</span><span class="explanation">Add 1 point to attribute.</span></div>
+			<div class="key-shortcut"><span class="key-combo">Alt +</span><span>1 to 5</span><span class="explanation">Remove 1 point from attribute.</span></div>
+		</div>
+	</div>
+	<div id="node-window">
+		<div id="node-map" style="top: 0; left: 0;"></div>
+	</div>
+		
+	</div>
+	<aside id="loadout-window">
+		<div id="available-perks">
+			<ul id="perk-list"></ul>
+			<select id="perk-filter"></select>
+		</div>
+	</aside>
+	<div id="floating-window" class="perk-window">
+		<button id="floating-window-close">X</button>
+		<h2 id="floating-window-title"></h2>
+		<div id="floating-window-subtitle"></div>
+		<p id="floating-window-body"></p>
+		<div id="floating-window-meta">
+			<p class="option-equip"><img src="leftclick.webp"><label>Equip</label></p>
+			<p class="option-unequip"><img src="rightclick.webp"><label>Un-Equip</label></p>
+			<button class="option-touch-equip">Add Perk</button>
+			<button class="option-touch-unequip">Remove Perk</button>
+			<button class="option-touch-go-to">Go To</button>
+		</div>
+	</div>
+	<div id="node-pos"></div>
+	<div id="queries">tcmmodes@gmail.com</div>
+	<div id="last-updated" title="last updated">Last updated on 10.15.2025</div>
+</body>
+<footer></footer>
+</html>
