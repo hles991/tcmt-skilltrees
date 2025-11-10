@@ -658,6 +658,8 @@ function tcm__loadPerkTree(name)
 
 	//usable perks
 	tcm__loadPerks(name);
+	// also build abilities grid
+	tcm__loadAbilities(name);
 
 	let treeArray = tcm__treeData[name];
 	if (treeArray != undefined)
@@ -810,6 +812,30 @@ function tcm__addFilterOption(elem, value)
 	if (value=='blood-harvest')
 		option.innerText = 'harvesting';
 	elem.appendChild(option);
+}
+
+
+function tcm__loadAbilities(charName)
+{
+	let abilityList = document.getElementById('ability-list');
+	if (!abilityList) return;
+	abilityList.removeChildren && abilityList.removeChildren();
+
+	let set = (typeof g__abilitySets !== 'undefined' && g__abilitySets[charName]) ? g__abilitySets[charName] : [];
+	if (!Array.isArray(set) || set.length === 0) {
+		set = [400,401,402,403,420,421,422,423,424]; // fallback 9
+	}
+	// Truncate or pad to exactly 9
+	if (set.length > 9) set = set.slice(0,9);
+	if (set.length < 9) {
+		const pad = [400,401,402,403,420,421,422,423,424];
+		while (set.length < 9) set.push(pad[set.length % pad.length]);
+	}
+
+	// Build icons via existing helper (makes correct sheet/size for ability ids)
+	for (let i=0; i<set.length; i++) {
+		tcm__addNodeIcon('li', abilityList, set[i]);
+	}
 }
 
 function tcm__loadPerks(charName)
@@ -1494,7 +1520,7 @@ function repositionFloatingWindow()
 			}
 			else if (g__elem__floatingTarget.parentNode.id == 'perk-list')
 			{
-				targetX = g__elem__floatingTarget.clientWidth + g__elem__floatingTarget.offsetLeft + perkList.parentNode.parentNode.offsetLeft - 200 + 5;
+				targetX = g__elem__floatingTarget.offsetLeft + g__elem__floatingTarget.clientWidth + perklist.parentNode.parentNode.offsetLeft + 12;
 				targetY = g__elem__floatingTarget.offsetTop + perkList.parentNode.parentNode.offsetTop - perkList.parentNode.scrollTop;
 
 				if (targetX + g__elem__floatingWindow.clientWidth > g__windowSize.w)
@@ -1502,6 +1528,19 @@ function repositionFloatingWindow()
 				if (targetY + g__elem__floatingWindow.clientHeight + footer.clientHeight + 20 > g__windowSize.h)
 					targetY = targetY - (g__elem__floatingWindow.clientHeight) + g__elem__floatingTarget.clientHeight + 5;	
 			}
+			else if (g__elem__floatingTarget.parentNode.id == 'ability-list')
+			{
+				let abilityList = document.getElementById('ability-list');
+				if (abilityList) {
+					targetX = g__elem__floatingTarget.offsetLeft + g__elem__floatingTarget.clientWidth + abilitylist.parentNode.parentNode.offsetLeft + 12;
+					targetY = g__elem__floatingTarget.offsetTop + abilityList.parentNode.parentNode.offsetTop - abilityList.parentNode.scrollTop;
+					if (targetX + g__elem__floatingWindow.clientWidth > g__windowSize.w)
+						targetX = targetX - (g__elem__floatingWindow.clientWidth) - g__elem__floatingTarget.clientWidth - 10;
+					if (targetY + g__elem__floatingWindow.clientHeight + footer.clientHeight + 20 > g__windowSize.h)
+						targetY = targetY - (g__elem__floatingWindow.clientHeight) + g__elem__floatingTarget.clientHeight + 5;
+				}
+			}
+
 			else
 			{
 				targetX = Math.floor(nodeMap.offsetLeft + ((nodeMap.clientWidth - (nodeMap.clientWidth*window.tcm__temp.zoomScalar))/2) + ((g__elem__floatingTarget.parentNode.offsetLeft + g__elem__floatingTarget.parentNode.clientWidth)*window.tcm__temp.zoomScalar));
@@ -1550,7 +1589,18 @@ function tcm__startApp()
 	let floatingWindowClose = document.getElementById('floating-window-close');
 	if (floatingWindowClose != undefined){floatingWindowClose.addEventListener('click',function(e){g__elem__floatingWindow.classList.remove('show');})}
 	let editLoadout = document.getElementById('edit-loadout');
-	if (editLoadout != undefined){editLoadout.addEventListener('click',function(e){document.body.classList.toggle('edit');})}
+if (editLoadout != undefined){editLoadout.addEventListener('click', function(e){
+  const editing = document.body.classList.toggle('edit');
+  if (editing){document.body.classList.add('edit-loadout');document.body.classList.remove('edit-ability');}
+  else {document.body.classList.remove('edit-loadout');document.body.classList.remove('edit-ability');}
+});}
+
+let editAbility = document.getElementById('edit-ability');
+if (editAbility != undefined){editAbility.addEventListener('click', function(e){
+  const editing = document.body.classList.toggle('edit');
+  if (editing){document.body.classList.add('edit-ability');document.body.classList.remove('edit-loadout');}
+  else {document.body.classList.remove('edit-ability');document.body.classList.remove('edit-loadout');}
+});}
 
 	if (window.tcm__temp == undefined)
 	{

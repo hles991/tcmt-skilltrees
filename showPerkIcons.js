@@ -83,6 +83,12 @@ function applyEverywhere() {
   if (loadoutWindow) applyIcons(loadoutWindow);
   if (available)     applyIcons(available);
   if (perkList)      applyIcons(perkList);
+
+  const abilityWindow = document.getElementById("ability-window");
+  const abilityList   = document.getElementById("ability-list");
+
+  if (abilityWindow) applyIcons(abilityWindow);
+  if (abilityList)   applyIcons(abilityList);
 }
 
   // Debounce to avoid thrashing during big DOM ops

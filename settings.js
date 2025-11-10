@@ -7,7 +7,27 @@ const regexKeywords = new RegExp(/(victim'*s*|family'*s*)/, 'gi');
 
 // Case sensative, used to fetch perk tree data, order changeable
 const g__victimNames = ['connie','leland','ana','sonny','julie','danny','virginia','maria','wyatt'];
-const g__familyNames = ['leatherface','cook','hitchhiker','sissy','johnny','nancy','hands','bones'];
+const g__familyNames = ['leatherface','cook','hitchhiker','sissy','johnny','nancy','hands','bones']
+const g__abilitySets = {
+  'connie': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'leland': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'ana': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'sonny': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'julie': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'danny': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'virginia': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'maria': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'wyatt': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'leatherface': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'cook': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'hitchhiker': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'sissy': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'johnny': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'nancy': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'hands': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+  'bones': [400, 401, 402, 403, 420, 421, 422, 423, 424],
+};
+;
 
 // 
 const g__victimFilterOrder = ['proficiency','stealth','strength','toughness','endurance','unique'];
