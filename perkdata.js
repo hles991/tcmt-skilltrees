@@ -316,6 +316,7 @@ const tcm__perkData = [
 	[762,"boon","ability","Ability Cooldown Reduction by 20%",[0,3]],
 
 	[763,"knife throw","ability","The number of throwing knives you start off with is increased by 3.",[0,0]],
+	[764,"boon","ability","Ability Stun Duration increased to 7 seconds.",[1,0]],
 	[765,"knife throw","ability","Family members hit by a throwing knife are revealed to all Victims for 20 seconds.",[2,0]],
 	[766,"knife throw","ability","Knives can be retrieved.",[3,0]],
 	[767,"knife throw","ability","The time to unsheathe your throwing knife is reduced by an additional 0.5 second(s). Unsheathe Time Duration Stacks.",[4,0]],
@@ -343,16 +344,6 @@ const tcm__perkData = [
 	[787,"seek","ability","Focusing in on a Victim takes half as long.",[1,1]],
 	[788,"seek","ability","Successfully highlighted Victims stay marked twice as long.",[2,1]],
 	[789,"seek","ability","Highlighted Victims are marked for the entire Family.",[0,3]],
-
-	[790,"trap","ability","Increases the speed of setting traps by 10%.",[0,0]],
-	[791,"trap","ability","Breaking free of traps is more difficult for Victims by 19%.",[1,0]],
-	[792,"trap","ability","Increases the amount of damage inflicted on a Victim when snared by 13%.",[2,0]],
-	[793,"trap","ability","Increases the speed of setting traps by 20%.",[3,0]],
-	[794,"trap","ability","Breaking free of traps is more difficult for Victims by 28%.",[4,0]],
-	[795,"trap","ability","Increases the amount of damage inflicted on a Victim when snared by 33%.",[0,1]],
-	[796,"trap","ability","When a Victim is snared, the activated trap is highlighted to all Family members.",[1,1]],
-	[797,"trap","ability","If a Victim is caught in a trap, you'll receive blood after resetting or collecting the trap.",[2,1]],
-	[998,"trap","ability","Any Victim caught in a trap continues to take damage over a short period of time.",[0,3]],
 
 	[798,"bane","ability","Poison can now be applied to bone scrap piles, toolboxes, generators and car batteries.",[0,0]],
 	[799,"bane","ability","The poison seeps into the Victim's wounds, causing them to lose health for a short period of time.",[1,0]],
@@ -412,4 +403,14 @@ const tcm__perkData = [
 	[848,"heightened sense","ability","Increases noise detection range of the ability by 15%.",[1,1]],
 	[849,"heightened sense","ability","Cooldown before your ability starts recharging is reduced by 1s.",[2,1]],
 	[850,"heightened sense","ability","Reduces the consumption rate of the ability by 25%.",[0,3]],
+
+	[851,"trap","ability","Increases the speed of setting traps by 10%.",[0,0]],
+	[852,"trap","ability","Breaking free of traps is more difficult for Victims by 19%.",[1,0]],
+	[853,"trap","ability","Increases the amount of damage inflicted on a Victim when snared by 13%.",[2,0]],
+	[854,"trap","ability","Increases the speed of setting traps by 20%.",[3,0]],
+	[855,"trap","ability","Breaking free of traps is more difficult for Victims by 28%.",[4,0]],
+	[856,"trap","ability","Increases the amount of damage inflicted on a Victim when snared by 33%.",[0,1]],
+	[857,"trap","ability","When a Victim is snared, the activated trap is highlighted to all Family members.",[1,1]],
+	[858,"trap","ability","If a Victim is caught in a trap, you'll receive blood after resetting or collecting the trap.",[2,1]],
+	[859,"trap","ability","Any Victim caught in a trap continues to take damage over a short period of time.",[0,3]],
 ];
