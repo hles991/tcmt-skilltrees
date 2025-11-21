@@ -144,7 +144,7 @@ const tcm__perkData = [
 	[215,"surgical","blood-harvest","You receive 100% more blood when attacking Victims.",[7,0]],
 	[216,"universal donor","blood-harvest","Blood collected from buckets is increased by 50%.",[8,0]],
 	[217,"vial-ent","blood-harvest","Your damage is increased by 20% when carrying a full blood vial.",[9,0]],
-	[218,"Damnit Johnny","blood-harvest","Your stun time reduced by 3.5 seconds.",[0,1]],
+	[218,"damnit johnny","blood-harvest","Your stun time reduced by 3.5 seconds.",[0,1]],
 	// [213,"no escaping today","blood-harvest","After using a generator or fuse box the interaction cooldown is 30 seconds shorter.",[4,0]],
 	
 	[219,"chicken whisperer","endurance","Chickens will not generate noise if you are spotted. Does not affect Victims.",[1,1]],
